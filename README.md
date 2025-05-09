@@ -11,28 +11,34 @@ The project evaluates the self-refinement abilities of large language models (LL
 
 ## Project Structure
 
+## Project Structure
+
 your_project/  
-├── data/  
-│   ├── asdiv.jsonl           # ASDiv benchmark samples  
-│   └── gsm8k.jsonl           # GSM8K benchmark samples  
-├── prompts/  
-│   ├── answer_prompt.txt     # Template for answer inference  
-│   └── hint_prompt.txt       # Template for hint generation  
-├── results/  
-│   ├── gemma-2-2b-it/        # Outputs for model “gemma-2-2b-it”  
-│   │   ├── initial_inference.jsonl  
-│   │   ├── hints.jsonl  
-│   │   └── post_hint_inference.jsonl  
-│   ├── phi-4-mini-instruct/  # Same outputs for “phi-4-mini-instruct”  
-│   └── statistics.txt        # Aggregated stats (after analysis step)  
-├── src/  
-│   ├── data.py               # load/save JSONL utilities  
-│   ├── utils.py              # prompt builders & extraction helpers  
-│   ├── inference.py          # solve_questions & generate_hints  
-│   ├── run.py                # main pipeline CLI  
-│   └── analysis.py           # compute & format summary stats  
-├── README.md                 # Project overview and instructions  
-└── requirements.txt          # Python dependencies  
+- **data/**  
+  - `asdiv.jsonl`           # ASDiv benchmark samples  
+  - `gsm8k.jsonl`           # GSM8K benchmark samples  
+
+- **prompts/**  
+  - `answer_prompt.txt`     # Template for answer inference  
+  - `hint_prompt.txt`       # Template for hint generation  
+
+- **results/**  
+  - **gemma-2-2b-it/**      # Outputs for “gemma-2-2b-it”  
+    - `initial_inference.jsonl`  
+    - `hints.jsonl`  
+    - `post_hint_inference.jsonl`  
+  - **phi-4-mini-instruct/**# Outputs for “phi-4-mini-instruct”  
+  - `statistics.txt`        # Aggregated stats  
+
+- **src/**  
+  - `data.py`               # load/save JSONL utilities  
+  - `utils.py`              # prompt builders & extraction helpers  
+  - `inference.py`          # solve_questions & generate_hints  
+  - `run.py`                # main pipeline CLI  
+  - `analysis.py`           # compute & format summary stats  
+
+- `README.md`               # Project overview and instructions  
+- `requirements.txt`        # Python dependencies  
 
 ## How to Use
 
