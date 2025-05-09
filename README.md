@@ -12,26 +12,28 @@ The project evaluates the self-refinement abilities of large language models (LL
 ## Project Structure
 
 
-  - data/ — raw & processed JSONL datasets  
+  - data/ - arithmetic benchmarks
     - `asdiv.jsonl` — ASDiv benchmark samples  
     - `gsm8k.jsonl` — GSM8K benchmark samples  
+
   - prompts/ — prompt templates  
     - `answer_prompt.txt` — for initial answer inference  
     - `hint_prompt.txt` — for hint generation  
+
   - results/ — model outputs and aggregated stats  
-    - gemma-2-2b-it/ — outputs for gemma-2-2b-it run  
-      - `initial_inference.jsonl`  
-      - `hints.jsonl`  
-      - `post_hint_inference.jsonl`  
-    - phi-4-mini-instruct/ — outputs for phi-4-mini-instruct run  
+    - gemma-2-2b-it/ — outputs for gemma-2-2b-it
+    - phi-4-mini-instruct/ — outputs for phi-4-mini-instruct
     - `statistics.txt` — aggregated accuracy stats  
+
   - src/ — source code modules  
     - `data.py` — load and save JSONL utilities  
     - `utils.py` — prompt builders and parsers  
     - `inference.py` — solve questions and generate hints  
     - `run.py` — command line interface entry point  
     - `analysis.py` — summary statistics computation  
-  - `README.md` — project overview and instructions  
+
+  - `README.md` — project overview and instructions 
+  
   - `requirements.txt` — Python dependencies  
 
 
