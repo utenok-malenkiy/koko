@@ -33,7 +33,7 @@ The project evaluates the self-refinement abilities of large language models (LL
     - `analysis.py` — summary statistics computation  
 
   - `README.md` — project overview and instructions 
-  
+
   - `requirements.txt` — Python dependencies  
 
 
@@ -57,10 +57,10 @@ python src/run.py \
   [--max_samples N]
 ```
 
-- *--model_path*: Hugging Face checkpoint (e.g. `google/gemma-2-2b-it`) or local directory  
-- *--input_path*: JSONL file with each line `{ "question": "...", "answer": "..." }`  
-- *--output_dir*: Directory for three output files  
-- *--max_samples* (optional): limit number of examples processed  
+- *model_path*: Hugging Face checkpoint (e.g. `google/gemma-2-2b-it`) or local directory  
+- *input_path*: JSONL file with each line `{ "question": "...", "answer": "..." }`  
+- *output_dir*: Directory for three output files  
+- *max_samples* (optional): limit number of examples processed  
 
 After running, you’ll find:
 
@@ -73,7 +73,7 @@ After running, you’ll find:
 Summarize initial vs. post-hint accuracy across all model/dataset folders:
 
 ```
-python src/statistics.py \
+python src/analysis.py \
   --parent_dir results \
   --output_file results/statistics.txt
 ```
