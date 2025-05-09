@@ -11,34 +11,29 @@ The project evaluates the self-refinement abilities of large language models (LL
 
 ## Project Structure
 
-## Project Structure
 
-your_project/  
-- **data/**  
-  - `asdiv.jsonl`           # ASDiv benchmark samples  
-  - `gsm8k.jsonl`           # GSM8K benchmark samples  
+  - data/ — raw & processed JSONL datasets  
+    - `asdiv.jsonl` — ASDiv benchmark samples  
+    - `gsm8k.jsonl` — GSM8K benchmark samples  
+  - prompts/ — prompt templates  
+    - `answer_prompt.txt` — for initial answer inference  
+    - `hint_prompt.txt` — for hint generation  
+  - results/ — model outputs and aggregated stats  
+    - gemma-2-2b-it/ — outputs for gemma-2-2b-it run  
+      - `initial_inference.jsonl`  
+      - `hints.jsonl`  
+      - `post_hint_inference.jsonl`  
+    - phi-4-mini-instruct/ — outputs for phi-4-mini-instruct run  
+    - `statistics.txt` — aggregated accuracy stats  
+  - src/ — source code modules  
+    - `data.py` — load and save JSONL utilities  
+    - `utils.py` — prompt builders and parsers  
+    - `inference.py` — solve questions and generate hints  
+    - `run.py` — command line interface entry point  
+    - `analysis.py` — summary statistics computation  
+  - `README.md` — project overview and instructions  
+  - `requirements.txt` — Python dependencies  
 
-- **prompts/**  
-  - `answer_prompt.txt`     # Template for answer inference  
-  - `hint_prompt.txt`       # Template for hint generation  
-
-- **results/**  
-  - **gemma-2-2b-it/**      # Outputs for “gemma-2-2b-it”  
-    - `initial_inference.jsonl`  
-    - `hints.jsonl`  
-    - `post_hint_inference.jsonl`  
-  - **phi-4-mini-instruct/**# Outputs for “phi-4-mini-instruct”  
-  - `statistics.txt`        # Aggregated stats  
-
-- **src/**  
-  - `data.py`               # load/save JSONL utilities  
-  - `utils.py`              # prompt builders & extraction helpers  
-  - `inference.py`          # solve_questions & generate_hints  
-  - `run.py`                # main pipeline CLI  
-  - `analysis.py`           # compute & format summary stats  
-
-- `README.md`               # Project overview and instructions  
-- `requirements.txt`        # Python dependencies  
 
 ## How to Use
 
@@ -60,10 +55,10 @@ python src/run.py \
   [--max_samples N]
 ```
 
-- **--model_path**: Hugging Face checkpoint (e.g. `google/gemma-2-2b-it`) or local directory  
-- **--input_path**: JSONL file with each line `{ "question": "...", "answer": "..." }`  
-- **--output_dir**: Directory for three output files  
-- **--max_samples** (optional): limit number of examples processed  
+- *--model_path*: Hugging Face checkpoint (e.g. `google/gemma-2-2b-it`) or local directory  
+- *--input_path*: JSONL file with each line `{ "question": "...", "answer": "..." }`  
+- *--output_dir*: Directory for three output files  
+- *--max_samples* (optional): limit number of examples processed  
 
 After running, you’ll find:
 
@@ -81,4 +76,4 @@ python src/statistics.py \
   --output_file results/statistics.txt
 ```
 
-After running, you’ll find `statistics.txt` containing all evaluation metrics.
+After running, you’ll find `statistics.txt` containing calculated evaluation metrics.
