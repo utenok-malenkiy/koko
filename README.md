@@ -45,6 +45,7 @@ The project evaluates the self-refinement abilities of large language models (LL
 pip install -r requirements.txt
 ```
 
+
 2. Run the full pipeline
 
 This will generate initial answers, hints, and post-hint answers:
@@ -60,13 +61,15 @@ python src/run.py \
 - *model_path*: Hugging Face checkpoint (e.g. `google/gemma-2-2b-it`) or local directory  
 - *input_path*: JSONL file with each line `{ "question": "...", "answer": "..." }`  
 - *output_dir*: Directory for three output files  
-- *max_samples* (optional): limit number of examples processed  
+- *max_samples*: limit number of examples processed  (optional)
 
 After running, you’ll find:
 
 - `initial_inference.jsonl`  
 - `hints.jsonl`  
 - `post_hint_inference.jsonl`  
+
+
 
 3. Analyze accuracy improvements
 
