@@ -44,7 +44,7 @@ The project evaluates the self-refinement abilities of large language models (LL
 ```
 pip install -r requirements.txt
 ```
-
+<br>
 
 2. Run the full pipeline
 
@@ -68,9 +68,7 @@ After running, you’ll find:
 - `initial_inference.jsonl`  
 - `hints.jsonl`  
 - `post_hint_inference.jsonl`  
-
-
-
+<br>
 3. Analyze accuracy improvements
 
 Summarize initial vs. post-hint accuracy across all model/dataset folders:
